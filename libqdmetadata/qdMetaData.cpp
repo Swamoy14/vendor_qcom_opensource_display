@@ -312,7 +312,6 @@ int setMetaDataVa(MetaData_t *data, DispParamType paramType,
           data->video_histogram_stats.stat_len = 0;
           break;
         default:
-          ALOGE("Unknown paramType %d", paramType);
           break;
       }
        // param unset
@@ -418,7 +417,6 @@ int setMetaDataVa(MetaData_t *data, DispParamType paramType,
             data->videoTsInfo = *((VideoTimestampInfo *)param);
             break;
         default:
-            ALOGE("Unknown paramType %d", paramType);
             break;
     }
     return 0;
@@ -447,7 +445,6 @@ int clearMetaDataVa(MetaData_t *data, DispParamType paramType) {
             data->video_histogram_stats.stat_len = 0;
             break;
         default:
-            ALOGE("Unknown paramType %d", paramType);
             break;
     }
     return 0;
@@ -564,7 +561,6 @@ int getMetaDataVa(MetaData_t *data, DispFetchParamType paramType,
           *((VideoTimestampInfo *)param) = data->videoTsInfo;
           break;
         default:
-            ALOGE("Unknown paramType %d", paramType);
             ret = -EINVAL;
             break;
     }
